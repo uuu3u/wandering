@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="Helvetica, Arial, sans-serif">
+  <rect width="760" height="330" fill="#fbfaf7"/>
+  <g transform="translate(0,30)">
+  <!-- threads (undirected) -->
+  <g stroke="#c9c4ba" stroke-width="2">
+    <line x1="110" y1="150" x2="250" y2="90"/>
+    <line x1="110" y1="150" x2="240" y2="220"/>
+    <line x1="250" y1="90" x2="400" y2="120"/>
+    <line x1="240" y1="220" x2="400" y2="120"/>
+    <line x1="400" y1="120" x2="540" y2="70"/>
+    <line x1="400" y1="120" x2="530" y2="210"/>
+    <line x1="540" y1="70" x2="670" y2="150"/>
+    <line x1="530" y1="210" x2="670" y2="150"/>
+  </g>
+  <!-- the walk: light fades each step -->
+  <g stroke="#d9772b" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M110 150 L250 90" stroke-opacity="1"/>
+    <path d="M250 90 L400 120" stroke-opacity="0.75"/>
+    <path d="M400 120 L540 70" stroke-opacity="0.56"/>
+    <path d="M540 70 L670 150" stroke-opacity="0.42" stroke-dasharray="8 8"/>
+  </g>
+  <!-- cards -->
+  <g stroke="#3b3a36" stroke-width="2">
+    <circle cx="110" cy="150" r="22" fill="#d9772b"/>
+    <circle cx="250" cy="90" r="18" fill="#f2c39b"/>
+    <circle cx="240" cy="220" r="18" fill="#fff"/>
+    <circle cx="400" cy="120" r="18" fill="#f2c39b"/>
+    <circle cx="540" cy="70" r="18" fill="#f7dcc3"/>
+    <circle cx="530" cy="210" r="18" fill="#fff"/>
+    <circle cx="670" cy="150" r="18" fill="#fff" stroke-dasharray="4 4"/>
+  </g>
+  <g font-size="13" fill="#3b3a36" text-anchor="middle">
+    <text x="110" y="195">start</text>
+    <text x="110" y="211" fill="#7a766d">most similar to</text>
+    <text x="110" y="226" fill="#7a766d">what was just said</text>
+    <text x="180" y="105" fill="#d9772b">same_person</text>
+    <text x="330" y="92" fill="#d9772b">same_feel</text>
+    <text x="460" y="82" fill="#d9772b">same_time</text>
+    <g fill="#9a958b" font-size="12">
+      <text x="200" y="176">same_time</text>
+      <text x="330" y="190">same_thing</text>
+      <text x="480" y="180">same_concept</text>
+      <text x="615" y="105">same_feel</text>
+      <text x="592" y="208">same_concept</text>
+    </g>
+    <text x="690" y="190">drifted off-topic</text>
+    <text x="690" y="206" fill="#7a766d">kept, then stop</text>
+  </g>
+  </g>
+  <text x="30" y="34" font-size="16" font-weight="bold" fill="#3b3a36">cards ● linked by five kinds of threads ─ a walk follows them while the light lasts</text>
+  <text x="30" y="316" font-size="12" fill="#7a766d">each step: pick a neighbour by softmax(strength × salience × recency) · light ×0.75 per step · max 4 steps</text>
+  <text x="30" y="58" font-size="12" fill="#7a766d">same_time · same_person · same_thing · same_feel · same_concept — every thread says why</text>
+</svg>
